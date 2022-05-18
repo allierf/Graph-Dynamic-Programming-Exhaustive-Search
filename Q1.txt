@@ -1,0 +1,5 @@
+Q1.A:
+We have to relax all edges |v|-1 times because |v|-1 edges is the maximal length to find the shortest path in the graph. If we consider more edges than that then were creating cycles and checking paths that will not change unless there is a negative cycle.
+
+Q1.B:
+The last for loop detects a negative cycle by determining if any dist is updated when running through the edges once more. If a smaller dist is found then we know a negative cycle exists because each time we'd run it again a new dist could be found, so there is no shortest path to be found.

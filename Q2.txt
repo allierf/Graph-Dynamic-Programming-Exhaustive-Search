@@ -1,0 +1,9 @@
+Q2.A:
+DP[n] returns the solution to APSP because the each subproblem is dependent on the previous. We start with the matrix DP[0] which holds all of the weights of the edges then DP[1] takes the minimum of DP[0] (the orginal weight) or the weight of the path going through node 1. So if the path going through node 1 is cheaper than the previous subproblem then the matrix will be updated to hold the new weight. Each subproblem after looks at the subproblem directly before it so the nth subproblem will hold the minimum weights for all of the paths considering all nodes 1 - n. 
+
+Q2.B:
+We are taking the minimum of the previous minimum path found and the path that goes through the specific node we are looking at. For example, if k = 2 and we're looking to find the best path from (1,3) then we would look at the previous subproblem when k = 1 and checking if the path found there is cheaper than the (1,2) + (2,3) path found. Then the k =2 subproblem will be updated with the min. 
+
+Q2.C:
+The amount of subproblems is v^3 because the matrix that is created is a cube where we need to check each node which is size v times each matrix filled  which is v by v large. The time per subproblem is constant time because we are taking the minimum of the entries. Therefore the time complexity is O(v^3).
+

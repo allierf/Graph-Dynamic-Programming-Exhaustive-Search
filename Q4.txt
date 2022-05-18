@@ -1,0 +1,6 @@
+Q4.A:
+input: digits = "345"
+output: ["dgj","dgk","dgl","dhj","dhk","dhl","dij","dik","dil","egj","egk","egl","ehj","ehk","ehl","eij","eik","eil","fgj","fgk","fgl","fhj","fhk","fhl","fij","fik","fil"]
+
+Q4.B:
+My approach to the leetcode question was to create a helper function and pass in a vector called outputs to hold the combinations of letters, a string called currAnswer to hold the letters that we are recursing on, an int called idx to point to the number we are looking at and the original string called digits which is the input. I also defined gloabally the lettermapping provided. My base case is to to check whether the currAnswer is the same size as the digits because each combination is the size of how many digits we are looking at. If they are equal then we push back the answer to the outputs vector. For the recursive case we check whether the digit is in the map and if that is true then we enter a for loop that iterates through the letters in the map of the given digit. We choose and push back a letter than explore the other digits. Once the all the digits are explored we pop of the last digit and choose a new digit to explore. 
